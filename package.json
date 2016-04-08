@@ -1,0 +1,19 @@
+{
+  "name": "sindri-form",
+  "version": "0.1.0",
+  "description": "Gerador Automatico de Formulário para AngularJs baseado no Formly usando interface do Sindri",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andregt/sindri-form.git"
+  },
+  "author": "André Timermann <andre@andregustavo.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andregt/sindri-form/issues"
+  },
+  "homepage": "https://github.com/andregt/sindri-form#readme"
+}
