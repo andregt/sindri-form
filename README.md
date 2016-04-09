@@ -19,3 +19,17 @@ O Objeto é facilitar criação de formulários comuns que simplesmente persiste
 * sindri-framework
 
 
+## TODO: Documentar. IMPORTANTE!!!!!!!
+
+* Como funciona o formly
+* Como definir campos e wrapper
+* Como vincular ao sindrimodel
+
+
+## Configuração
+
+| Propriedade  	| Descrição                                                                                                                   	|
+|--------------	|-----------------------------------------------------------------------------------------------------------------------------	|
+| api          	| Url da API com acesso ao Sindri Model, para geração do formulário automaticamente                                           	|
+| model        	| Caso deseje um formulário personalizado, possível definir modelo aqui                                                       	|
+| customFields 	| Definição de campo diretamente pelo Formly sem acessar o sindriModel, neste caso não será salvo automaticamente no servidor 	|

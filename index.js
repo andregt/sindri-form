@@ -5,3 +5,17 @@
  */
 'use strict';
 
+const angular = require('angular');
+
+
+module.exports = angular.module("sindriForm", [require('angular-formly')])
+
+
+    // PERSONALIZAÇÃO DO FORMULÁRIO FORMLY, Inicialização dos campos
+    .run(require('./lib/run'))
+
+    // CONFIGURAÇÃO DA DIRETIVA
+    .directive('sindriForm', require('./lib/directive'))
+
+
+    .name;

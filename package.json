@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/andregt/sindri-form/issues"
   },
-  "homepage": "https://github.com/andregt/sindri-form#readme"
+  "homepage": "https://github.com/andregt/sindri-form#readme",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-formly": "^8.2.0",
+    "api-check": "^7.5.5",
+    "html-loader": "^0.4.3",
+    "jquery": "^2.2.3"
+  }
 }
