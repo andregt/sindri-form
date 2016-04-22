@@ -1,10 +1,21 @@
-<h1>Sindri Form</h1>
-
 <br><br>
-<formly-form model="rental" fields="rentalFields" form="rentalForm">
+<formly-form model="model" fields="sindriFormFields" form="sindriForm">
 
-    <div class="clearfix">..</div>
-    <button type="submit" class="btn btn-primary" ng-disabled="rentalForm.$invalid">Submit</button>
+    <div class="clearfix"></div>
+
+
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <!--<button type="submit" class="btn btn-danger" ng-disabled="sindriForm.$invalid"">Apagar Registro</button>-->
+
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="submit" class="btn btn-primary" ng-click="sindriFormCtrl.save()">Salvar</button>&nbsp&nbsp
+            <!--<button type="submit" class="btn btn-primary" ng-disabled="sindriForm.$invalid">Salvar e Adicionar Outro</button>-->
+            <!--ou <a  href="#">Cancelar</a>-->
+        </div>
+
+    </div>
 
 </formly-form>
 
