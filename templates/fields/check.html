@@ -1,0 +1,28 @@
+<div class="form-group fg-float m-b-30" data-ng-class="{'has-error has-feedback' : showError || to.serverError }">
+
+    <!--Campo-->
+    <div class="checkbox m-b-15">
+        <label>
+            <input type="checkbox" data-ng-model="model[options.key]">
+            <i class="input-helper"></i>
+            {{ to.label }}
+        </label>
+    </div>
+
+    <!-- Aqui fica as mensagens de erro-->
+    <div data-ng-if="showError" data-ng-messages="fc.$error">
+        <small data-ng-message="{{::name}}" data-ng-repeat="(name, message) in ::options.validation.messages"
+               class="input-error">
+            {{ message(options.formControl.$viewValue, options.formControl.$modelValue, this )}}
+        </small>
+    </div>
+
+    <!-- Aqui fica as mensagens de erro do Servidor-->
+    <div data-ng-if="to.serverErrorMessage.length">
+
+        <small data-ng-repeat="message in to.serverErrorMessage" class="input-error">
+            {{ message }}<br>
+        </small>
+
+    </div>
+</div>

@@ -7,8 +7,12 @@
 
 const angular = require('angular');
 
+require('angular-messages');
 
-module.exports = angular.module("sindriForm", [require('angular-formly')])
+// Versão do NPM desatualizado
+require('./ngMask/ngMask');
+
+module.exports = angular.module("sindriForm", [require('angular-formly'), "ngMessages", "ngMask"])
 
 
     // PERSONALIZAÇÃO DO FORMULÁRIO FORMLY, Inicialização dos campos

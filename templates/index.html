@@ -1,22 +1,48 @@
-<br><br>
-<formly-form model="model" fields="sindriFormFields" form="sindriForm">
+<!-- Aqui fica as mensagens de erro do Servidor-->
+<div ng-if="sindriFormCtrl.globalErrorMessage.length">
 
-    <div class="clearfix"></div>
-
-
-    <div class="row">
-        <div class="col-md-6 text-left">
-            <!--<button type="submit" class="btn btn-danger" ng-disabled="sindriForm.$invalid"">Apagar Registro</button>-->
-
-        </div>
-        <div class="col-md-6 text-right">
-            <button type="submit" class="btn btn-primary" ng-click="sindriFormCtrl.save()">Salvar</button>&nbsp&nbsp
-            <!--<button type="submit" class="btn btn-primary" ng-disabled="sindriForm.$invalid">Salvar e Adicionar Outro</button>-->
-            <!--ou <a  href="#">Cancelar</a>-->
-        </div>
-
+    <div class="alert alert-danger alert-dismissible" role="alert"
+         ng-repeat="(key, message) in sindriFormCtrl.globalErrorMessage" ng-hide="sindriFormCtrl.hide[key]">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                ng-click="sindriFormCtrl.hide[key] = true"><span aria-hidden="true">×</span></button>
+        {{ message }}
     </div>
 
-</formly-form>
+</div>
+
+<div class="container-fluid">
+    <formly-form model="sindriFormCtrl.model" fields="sindriFormCtrl.formlyFields" form="sindriFormCtrl.form">
+
+        <!--<p>Dirty: {{ sindriFormCtrl.form.$dirty }}</p>-->
+        <!--<p>Pristine: {{ sindriFormCtrl.form.$pristine }}</p>-->
+        <!--<p>Valid: {{ sindriFormCtrl.form.$valid }}</p>-->
+        <!--<p>Invalid: {{ sindriFormCtrl.form.$invalid }}</p>-->
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <!--<button type="submit" class="btn btn-danger" ng-disabled="sindriForm.$invalid"">Apagar Registro</button>-->
+
+            </div>
+            <div class="col-md-6 text-right">
+                <button type="submit" class="btn btn-primary" ng-click="sindriFormCtrl.save()">Salvar</button>
+                &nbsp&nbsp
+                <!--<button type="submit" class="btn btn-primary" ng-disabled="sindriForm.$invalid">Salvar e Adicionar Outro</button>-->
+                <!--ou <a  href="#">Cancelar</a>-->
+            </div>
+
+        </div>
+
+    </formly-form>
+</div>
 
 
+<!--<hr>-->
+<!--model:-->
+<!--<pre>{{sindriFormCtrl.model | json}}</pre>-->
+
+<!--<hr>-->
+<!--form:-->
+<!--<pre>{{sindriFormCtrl.form | json}}</pre>-->
+<!--<hr>-->

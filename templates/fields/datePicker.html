@@ -2,7 +2,9 @@
 
     <!--Campo-->
     <div class="fg-line">
-        <input type="{{ to.type }}" class="input-sm form-control fg-input" data-ng-model="model[options.key]">
+        <input type="text" uib-datepicker-popup="{{format}}" is-open="opened" ng-click="open($event)"
+               class="input-sm form-control fg-input" data-ng-model="model[options.key]" clear-text="Limpar"
+               close-text="Fechar" current-text="Hoje" datepicker-options="options"/>
 
         <!-- Label com efeito especial-->
         <label class="fg-label" data-ng-class="{'input-error' : showError || to.serverError}">{{ to.label }}</label>
@@ -13,7 +15,8 @@
 
     <!-- Aqui fica as mensagens de erro-->
     <div data-ng-if="showError" data-ng-messages="fc.$error">
-        <small data-ng-message="{{::name}}" data-ng-repeat="(name, message) in ::options.validation.messages" class="input-error">
+        <small data-ng-message="{{::name}}" data-ng-repeat="(name, message) in ::options.validation.messages"
+               class="input-error">
             {{ message(options.formControl.$viewValue, options.formControl.$modelValue, this )}}
         </small>
     </div>
@@ -21,9 +24,9 @@
     <!-- Aqui fica as mensagens de erro do Servidor-->
     <div data-ng-if="to.serverErrorMessage.length">
 
-            <small data-ng-repeat="message in to.serverErrorMessage" class="input-error">
-                {{ message }}<br>
-            </small>
+        <small data-ng-repeat="message in to.serverErrorMessage" class="input-error">
+            {{ message }}<br>
+        </small>
 
     </div>
 </div>
