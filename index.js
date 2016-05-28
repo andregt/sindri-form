@@ -12,6 +12,7 @@ require('angular-messages');
 // Versão do NPM desatualizado
 require('./ngMask/ngMask');
 
+
 module.exports = angular.module("sindriForm", [require('angular-formly'), "ngMessages", "ngMask"])
 
 

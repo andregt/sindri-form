@@ -33,11 +33,11 @@ class InputField extends FieldBase {
             subType = 'email';
         }
 
-
         return {
             key: self.fieldName,
             type: "input",
             className: self.info.className,
+            defaultValue: "",
             templateOptions: {
                 type: subType,
                 label: self.createLabel(),

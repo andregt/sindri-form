@@ -24,6 +24,12 @@ class DataInputField extends MaskedInput {
 
         let field = super.getField();
 
+        // Altera o valor padrão para false
+        // A leitura de dados é feito antes de carregar Field
+        // if (!self.info['default']) {
+        //     self.info['default'] = '';
+        // }
+
         // Altera o Tipo de Filtro
         self.info.filter = "date";
 

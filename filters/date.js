@@ -10,15 +10,23 @@ const moment = require('moment');
 
 module.exports = {
 
-    to(value){
+    toServer(value){
 
-        return moment(value, 'DDMMYYYY').toDate();
+        if (value){
+            return moment(value, 'DDMMYYYY').toDate();
+        }else{
+            return value;
+        }
+
 
     },
-    from(value){
+    fromServer(value){
 
-        moment(value).format('DDMMYYYY');
+        if (value){
+            return moment(value).format('DDMMYYYY');
+        }else{
+            return value;
+        }
 
     }
-
 };

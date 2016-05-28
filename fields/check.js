@@ -22,11 +22,18 @@ class CheckField extends FieldBase {
 
         let self = this;
 
+        // // Altera o valor padrão para false
+        // // A leitura de dados é feito antes de carregar Field
+        // if (self.info['default'] === undefined) {
+        //     self.info['default'] = false;
+        // }
+
 
         return {
             key: self.fieldName,
             type: "check",
             className: self.info.className,
+            defaultValue: false,
             templateOptions: {
                 label: self.createLabel(),
                 required: _.indexOf(self.info.validation, 'required') !== -1
