@@ -17,7 +17,7 @@ module.exports = {
     toServer(value){
 
         if (value){
-            return moment(value, 'DDMMYYYY').toDate();
+            return moment(value, 'DDMMYYYYhhmm').toDate();
         }else{
             return value;
         }
@@ -27,7 +27,7 @@ module.exports = {
     fromServer(value){
 
         if (value){
-            return moment(value).format('DDMMYYYY');
+            return moment(value).format('DDMMYYYYhhmm');
         }else{
             return value;
         }

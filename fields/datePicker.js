@@ -1,16 +1,23 @@
 /**
  * Created by André Timermann on 16/05/16.
  *
- * <File Reference Aqui: date>
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const FieldBase = require('../lib/fieldBase');
+const FieldType = require('../lib/fieldType');
 const DateTemplate = require('../templates/fields/datePicker.html');
 const _ = require('lodash');
 
-
-class DatePicker extends FieldBase {
+/**
+ * Date Picker
+ * 
+ * @todo Não finalizado
+ * 
+ * @extends {module:SindriForm/Field~FieldType}
+ */
+class DatePickerField extends FieldType {
 
 
     match() {
@@ -23,7 +30,6 @@ class DatePicker extends FieldBase {
     getField() {
 
         let self = this;
-
 
         return {
             key: self.fieldName,
@@ -65,5 +71,5 @@ class DatePicker extends FieldBase {
 
 }
 
-module.exports = DatePicker;
+module.exports = DatePickerField;
 

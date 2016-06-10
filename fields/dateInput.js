@@ -1,20 +1,28 @@
 /**
  * Created by André Timermann on 18/05/16.
  *
- * <File Reference Aqui: date>
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const MaskedInput = require('./1_maskedInput');
+const MaskedInputField = require('./1_maskedInput');
 //const DataTemplate = require('../templates/fields/date.html');
 const _ = require('lodash');
 
-class DataInputField extends MaskedInput {
+/**
+ * Máscara para Datas
+ *
+ * @extends {module:SindriForm/Fields~MaskedInputField}
+ */
+class DataInputField extends MaskedInputField {
 
 
     match() {
 
-        return (this.info.type == 'date');
+        let self = this;
+
+        return (self.info.type == 'date' || self.info.type == 'datetime');
 
     }
 
@@ -30,10 +38,17 @@ class DataInputField extends MaskedInput {
         //     self.info['default'] = '';
         // }
 
-        // Altera o Tipo de Filtro
-        self.info.filter = "date";
+        if (self.info.type == 'date') {
+            // Altera o Tipo de Filtro
+            self.info.filter = "date";
+            field.templateOptions.mask = "39/19/9999";
 
-        field.templateOptions.mask = "39/19/9999";
+        }else{
+
+            self.info.filter = "datetime";
+            field.templateOptions.mask = "39/19/9999 29:59";
+
+        }
 
         return field;
 

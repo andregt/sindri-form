@@ -1,15 +1,21 @@
 /**
  * Created by André Timermann on 14/05/16.
  *
- * <File Reference Aqui: radio>
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const FieldBase = require('../lib/fieldBase');
+const FieldType = require('../lib/fieldType');
 const RadioTemplate = require('../templates/fields/radio.html');
 const _ = require('lodash');
 
-class RadioField extends FieldBase {
+/**
+ * RadioBox
+ *
+ * @extends {module:SindriForm/Field~FieldType}
+ */
+class RadioField extends FieldType {
 
 
     match() {

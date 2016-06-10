@@ -1,17 +1,13 @@
 <div class="form-group fg-float m-b-30" data-ng-class="{'has-error has-feedback' : showError || to.serverError }">
 
+    <small style="position: absolute;  top: -20px; color: #959595;"
+           data-ng-class="{'input-error' : showError || to.serverError}">{{ to.label }}
+    </small>
     <!--Campo-->
-    <div  ng-class="{'fg-toggled': fc.$viewValue || focus}">
-
-        <input type="{{ to.type }}" class="input-sm form-control fg-input" ng-focus="focus=true"
-               data-ng-model="model[options.key]" ng-blur="focus=false">
-
-        <!-- Label com efeito especial-->
-        <label class="fg-label" data-ng-class="{'input-error' : showError || to.serverError}">{{ to.label }}</label>
-    </div>
-
-    <!-- Icone ao final do Input com X-->
-    <span class="zmdi zmdi-close form-control-feedback" data-ng-show="showError || to.serverError"></span>
+    <select chosen data-placeholder-text-single="to.placeholder" no-result-text="to.noResultsText" class="w-100"
+            ng-options="option.key as option.label for option in to.options" data-ng-model="model[options.key]">
+        <option value=""></option>
+    </select>
 
     <!-- Aqui fica as mensagens de erro-->
     <div data-ng-if="showError" data-ng-messages="fc.$error">

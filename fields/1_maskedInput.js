@@ -1,16 +1,22 @@
 /**
  * Created by André Timermann on 14/05/16.
  *
- * Refêrencia:
- * - http://angular-formly.com/#/example/very-advanced/ng-mask
- * - http://candreoliveira.github.io/bower_components/angular-mask/examples/index.html#/
- *
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const inputField = require('./0_input');
+const InputField = require('./0_input');
 
-class MaskedInputField extends inputField {
+/**
+ * Campo input extendido com suporte a Máscara
+ * 
+ * @see [NgMask](http://angular-formly.com/#/example/very-advanced/ng-mask)
+ * @see [AngularMask](http://candreoliveira.github.io/bower_components/angular-mask/examples/index.html#)
+ *
+ * @extends {module:SindriForm/Fields~InputField}
+ */
+class MaskedInputField extends InputField {
 
 
     match() {

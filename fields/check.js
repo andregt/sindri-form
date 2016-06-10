@@ -1,15 +1,21 @@
 /**
  * Created by André Timermann on 19/05/16.
  *
- * <File Reference Aqui: check>
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const FieldBase = require('../lib/fieldBase');
+const FieldType = require('../lib/fieldType');
 const CheckTemplate = require('../templates/fields/check.html');
 const _ = require('lodash');
 
-class CheckField extends FieldBase {
+/**
+ * Checkbox Simples
+ *
+ * @extends {module:SindriForm/Field~FieldType}
+ */
+class CheckField extends FieldType {
 
 
     match() {

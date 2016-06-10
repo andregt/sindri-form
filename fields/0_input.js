@@ -1,15 +1,21 @@
 /**
  * Created by André Timermann on 24/04/16.
  *
- *
+ * @module SindriForm/Fields
+ * @ignore
  */
 'use strict';
 
-const FieldBase = require('../lib/fieldBase');
+const FieldType = require('../lib/fieldType');
 const InputTemplate = require('../templates/fields/input.html');
 const _ = require('lodash');
 
-class InputField extends FieldBase {
+/**
+ * Campo de input simples
+ *
+ * @extends {module:SindriForm/Field~FieldType}
+ */
+class InputField extends FieldType {
 
 
     match() {
