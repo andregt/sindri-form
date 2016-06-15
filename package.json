@@ -1,6 +1,6 @@
 {
   "name": "sindri-form",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Gerador Automatico de Formulário para AngularJs baseado no Formly usando interface do Sindri",
   "main": "index.js",
   "scripts": {
