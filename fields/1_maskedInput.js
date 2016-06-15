@@ -43,7 +43,7 @@ class MaskedInputField extends InputField {
 
         if (self.info.type === 'numeric') {
 
-            maskPattern = "9";
+            maskPattern = '99999999999';
             validate = false;
 
             if (self.info.size) {

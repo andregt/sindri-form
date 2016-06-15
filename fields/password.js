@@ -65,7 +65,7 @@ class PasswordField extends FieldType {
 //         return {
 //             key: self.fieldName,
 //             type: "password",
-//             className: self.info.className,
+//             className: self.formConfig.className,
 //             validators: {
 //                 confirmPassword: {
 //                     expression: function (viewValue, modelValue, scope) {
@@ -130,7 +130,7 @@ class PasswordField extends FieldType {
         return {
             type: "password",
             key: self.fieldName,
-            className: self.info.className,
+            className: self.formConfig.className,
             defaultValue: "",
             templateOptions: {
                 label: self.createLabel(),

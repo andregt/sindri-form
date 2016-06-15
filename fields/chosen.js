@@ -18,13 +18,14 @@ const _ = require('lodash');
  *
  * Atributos:
  *
- * | Parâmetro     | Tipo   | Padrão                   | Obrigatório | Descrição                                                            |
- * |---------------|--------|--------------------------|-------------|----------------------------------------------------------------------|
- * | placeholder   | string | Selecione uma opção      | Não         | Mensagem exibida no select quanto nenhuma opção estiver selecionada. |
- * | noResultsText | string | Nenhuma opção disponível | Não         | Mensagem exibida quando não houver nenhuma opção para selecionar     |
- * | format        | string | `${id}`                  | Não         | Texto Exibido na listagem de opções.                                 |
- * | url           | string | undefined                | Não         | Carregamento assíncrono, url de onde as opções serão carregadas      |
- * | options       | array  | []                       | Não         | Lista de opções do Select                                            |
+ * | Parâmetro          | Tipo   | Padrão                   | Obrigatório | Descrição                                                            |
+ * |--------------------|--------|--------------------------|-------------|----------------------------------------------------------------------|
+ * | placeholder        | string | Selecione uma opção      | Não         | Mensagem exibida no select quanto nenhuma opção estiver selecionada. |
+ * | noResultsText      | string | Nenhuma opção disponível | Não         | Mensagem exibida quando não houver nenhuma opção para selecionar     |
+ * | format             | string | `${id}`                  | Não         | Texto Exibido na listagem de opções.                                 |
+ * | url                | string | undefined                | Não         | Carregamento assíncrono, url de onde as opções serão carregadas      |
+ * | options            | array  | []                       | Não         | Lista de opções do Select                                            |
+ * | nullOptionsLabel   | string | -- Nenhuma seleção --    | Não         | Label para o opção Null na base                                      |
  *
  * Nota: Atributos são definidos no schema
  *
@@ -44,18 +45,20 @@ class ChosenField extends FieldType {
 
     getField() {
 
+
         let self = this;
 
         return {
             key: self.fieldName,
             type: "chosen",
-            className: self.info.className,
+            className: self.formConfig.className,
             templateOptions: {
                 label: self.createLabel(),
                 required: _.indexOf(self.info.validation, 'required') !== -1,
-                options: self.info.options !== undefined ? self.info.options : [],
-                placeholder: self.info.placeholder || "Selecione uma opção",
-                noResultsText: self.info.noResultsText || "Nenhuma opção disponívelt"
+                options: self.formConfig.options !== undefined ? self.formConfig.options : [],
+                placeholder: self.formConfig.placeholder || "Selecione uma opção",
+                noResultsText: self.formConfig.noResultsText || "Sem Resultados",
+                nullOption: self.formConfig.nullOption || "-- Nenhuma Seleção --"
             },
             controller: function ($scope, notify) {
 
@@ -68,9 +71,9 @@ class ChosenField extends FieldType {
 
                                 let tpl;
 
-                                if (self.info.format) {
+                                if (self.formConfig.format) {
                                     // Converte uma string simples nem Template String
-                                    tpl = eval('`' + self.info.format.replace(/`/g, '\\`') + '`');
+                                    tpl = eval('`' + self.formConfig.format.replace(/`/g, '\\`') + '`');
                                 } else {
                                     tpl = `#${row.id}`;
                                 }

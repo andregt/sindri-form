@@ -1,6 +1,8 @@
 /**
  * Created by André Timermann on 24/04/16.
  *
+ * sindri-form/fields/0_input.js
+ * 
  * @module SindriForm/Fields
  * @ignore
  */
@@ -30,6 +32,7 @@ class InputField extends FieldType {
         let self = this;
 
         let subType = 'text';
+        
 
         ///////////////////////////////////////////////////////////////
         // Verifica Campo do tipo E-mail
@@ -42,7 +45,7 @@ class InputField extends FieldType {
         return {
             key: self.fieldName,
             type: "input",
-            className: self.info.className,
+            className: self.formConfig.className,
             defaultValue: "",
             templateOptions: {
                 type: subType,

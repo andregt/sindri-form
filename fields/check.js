@@ -38,7 +38,7 @@ class CheckField extends FieldType {
         return {
             key: self.fieldName,
             type: "check",
-            className: self.info.className,
+            className: self.formConfig.className,
             defaultValue: false,
             templateOptions: {
                 label: self.createLabel(),

@@ -4,9 +4,9 @@
            data-ng-class="{'input-error' : showError || to.serverError}">{{ to.label }}
     </small>
     <!--Campo-->
-    <select chosen data-placeholder-text-single="to.placeholder" no-result-text="to.noResultsText" class="w-100"
+    <select chosen data-placeholder-text-single="to.placeholder" no-results-text="to.noResultsText" class="w-100"
             ng-options="option.key as option.label for option in to.options" data-ng-model="model[options.key]">
-        <option value=""></option>
+        <option value="">{{ to.nullOption }}</option>
     </select>
 
     <!-- Aqui fica as mensagens de erro-->
@@ -26,3 +26,4 @@
 
     </div>
 </div>
+

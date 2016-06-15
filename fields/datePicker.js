@@ -34,7 +34,7 @@ class DatePickerField extends FieldType {
         return {
             key: self.fieldName,
             type: "date",
-            className: self.info.className,
+            className: self.formConfig.className,
             templateOptions: {
                 label: self.createLabel(),
                 required: _.indexOf(self.info.validation, 'required') !== -1
