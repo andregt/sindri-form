@@ -1,0 +1,62 @@
+<div class="form-group fg-float m-b-30">
+
+    <div style="position: absolute;  top: -20px; color: #959595;"
+         data-ng-class="{'input-error' : showError || to.serverError}">{{ to.label }}
+    </div>
+
+
+    <div class="form-group ">
+        <div class="fg-line " data-ng-class="{'fg-toggled': focus}">
+            <input type="text" class="form-control input-sm" placeholder="Busca" ng-focus="focus=true" ng-blur="focus=false" data-ng-model="searchOptions">
+        </div>
+    </div>
+
+    <div class="table-responsive" style="height:{{ ::screenHeight }}; overflow-y: auto; overflow-x: hidden">
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th></th>
+                <th data-ng-repeat="title in tableHeader">
+                    {{ title }}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr data-ng-if="!tableOptions.length">
+                <td class="text-center" colspan="{{ tableHeader.length + 1 }}">{{ to.noResultsText || "Nenhuma Opção Disponível" }}</td>
+            </tr>
+
+
+            <tr data-ng-repeat="option in tableOptions | filter: filterOptions(searchOptions)" data-ng-if="tableOptions.length">
+
+
+                <!-- TITULO DO GRUPO -->
+                <td data-ng-if="option.__groupName" colspan="{{ tableHeader.length + 1 }}">
+
+                    <b>{{ option.__groupName }}</b>
+
+                </td>
+
+                <!-- REGISTRO -->
+                <td data-ng-if="!option.__groupName">
+
+                    <div class="checkbox m-b-0 m-t-0">
+                        <label>
+                            <input type="checkbox" name="values[]" value="{{option.id}}" data-ng-model="option.selected">
+                            <i class="input-helper"></i>
+                        </label>
+                    </div>
+                </td>
+
+                <td data-ng-repeat="(key, column) in option" data-ng-if="key !== 'id' && key !== 'selected' && !option.__groupName">
+                    {{ column }}
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

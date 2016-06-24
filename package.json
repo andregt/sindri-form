@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/andregt/sindri-form#readme",
   "dependencies": {
-    "angular": "^1.5.3",
-    "angular-formly": "^8.2.0",
+    "angular": "^1.5.8-fix-6",
     "angular-messages": "^1.5.5",
     "api-check": "^7.5.5",
     "bootstrap-notify": "^3.1.3",

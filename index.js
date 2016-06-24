@@ -54,6 +54,8 @@
  * * [Fields Type]{@link module:SindriForm/Fields}
  *
  * @todo Mudar Nome de Options para API, observando que esta funcionalidade está implementada na classe pai (sindri-client)
+ *
+ * TODO: Criar opção para personalizar template do formulário (Criar um layout de form mais complexo), lembrando q podemos criar varias tags formly
  * 
  * @example
  *   <sindri-form options="sindriCrudCtrl.formOptions"></sindri-form>

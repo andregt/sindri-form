@@ -55,7 +55,6 @@ class InputField extends FieldType {
                 //serverErrorMessage: ["Mensagem de erro do servidor personalizado"]
             }
 
-
             // validators: {
             //     notBob: function (viewValue, modelValue, scope) {
             //         var value = modelValue || viewValue;
